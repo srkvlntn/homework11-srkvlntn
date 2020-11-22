@@ -1,0 +1,108 @@
+/* Обертка которая обрезает все лишнее что выходит за ширину страници,
+к примеру если вы что то вытаскиваете марджинами то у вас появится горизонтальный скролл на странице, эта обертка его срезает
++ если вы забыли указать position: relative; на нужном блоке, это ваша отправная точка для позиционирования,
+чтобы не трогать body
+эта обертка есть в каждом проекте */
+
+.wrapper {
+	overflow: hidden;
+	position: relative;
+}
+
+/* Элемент который центрирует контент на странице (только центрирует) */
+
+.container {
+	max-width: 1170px;
+	padding: 0px 15px;
+	margin: 0 auto;
+}
+
+.btn-box {
+	display: flex;
+	text-align: center;
+}
+
+
+.btn {
+	display: flex;
+	margin: auto;
+	justify-content: center;
+	vertical-align: top;
+	padding: 15px 20px;
+	border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+	border: solid 2px #fff;
+	line-height: 1.5;
+	outline: none;
+	background-color: #3a454d;
+	font-weight: bold;
+}
+
+.btn:hover {
+	background-color: #53636f;
+}
+
+
+
+.card {
+	position: relative;
+	margin-bottom: 26px;
+}
+
+.card h3 {
+	padding: 10px;
+	margin: 0;
+	color: white;
+	background-color: #292f36;
+}
+
+
+.card .hover-box {
+	background-color: rgba(0,0,0,.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+}
+
+.card:hover .hover-box {
+	opacity: 1;
+}
+
+.card .plus {
+	flex-grow: 1;
+	position: relative;
+}
+
+.card .plus::before,
+.card .plus::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: white;
+	transform: translate(-50%, -50%);
+}
+
+.card .plus::before {
+	width: 3px;
+	height: 20px;
+
+}
+
+.card .plus::after {
+	width: 20px;
+	height: 3px;
+}
+
+.card img {
+   display: block;
+   width: 100%;
+}
+
